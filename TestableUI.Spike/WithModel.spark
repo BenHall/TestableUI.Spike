@@ -1,0 +1,2 @@
+﻿<viewdata model="ViewDataModel"/>
+<p>${model.Data}</p>

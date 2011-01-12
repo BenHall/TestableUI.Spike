@@ -17,6 +17,13 @@ namespace TestableUI.Spike.Tests
       Assert.IsFalse(compiledHtml.Contains("Something has gone wrong!!"));
     }
 
+    [Test]
+    public void Can_pull_data_from_model()
+    {
+      SparkCompiler compiler = SparkCompiler.Create();
+      string compiledHtml = compiler.Compile(@"WithModel.spark", new ViewDataModel{Data="Special String"});
+      Assert.IsTrue(compiledHtml.Contains("Special String"));
+    }
   }
 
   [TestFixture]
